@@ -13,7 +13,7 @@ CREATE TABLE items (
   id SERIAL PRIMARY KEY,
   cost DECIMAL(12,2) NOT NULL
   -- name VARCHAR(255) NOT NULL,
-  -- description VARCHAR(255) NOT NULL,
+  -- description VARCHAR(256) NOT NULL,
 );
   
 CREATE TABLE item_translations (
