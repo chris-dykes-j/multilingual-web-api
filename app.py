@@ -23,3 +23,4 @@ def get_languages():
     cursor.execute('''SELECT * FROM languages''')
     result = cursor.fetchall()
     return jsonify(result)
+
