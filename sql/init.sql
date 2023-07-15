@@ -7,7 +7,8 @@ CREATE TABLE languages (
 
 INSERT INTO languages (language_code, language_name) VALUES
   ('en', 'English'),
-  ('fr', 'French');
+  ('fr', 'French'),
+  ('tr', 'Turkish'):
 
 CREATE TABLE items (
   id SERIAL PRIMARY KEY,
@@ -31,6 +32,8 @@ INSERT INTO item_translations (item_id, language_code, field, translation) VALUE
   (1, 'en', 'name', 'Logitech M510 Wireless Computer Mouse'),
   (1, 'en', 'description', 'Your hand can relax in comfort hour after hour with this ergonomically designed mouse. Its contoured shape with soft rubber grips, gently curved sides and broad palm area give you the support you need for effortless control all day long.'),
   (1, 'fr', 'name', 'Logitech M510 Souris d''ordinateur'),
-  (1, 'fr', 'description', 'Votre main peut se détendre confortablement heure après heure avec cette souris ergonomique. Sa forme profilée avec des poignées en caoutchouc souple, des côtés légèrement incurvés et une large zone de paume vous offrent le soutien dont vous avez besoin pour un contrôle sans effort tout au long de la journée.');
+  (1, 'fr', 'description', 'Votre main peut se détendre confortablement heure après heure avec cette souris ergonomique. Sa forme profilée avec des poignées en caoutchouc souple, des côtés légèrement incurvés et une large zone de paume vous offrent le soutien dont vous avez besoin pour un contrôle sans effort tout au long de la journée.'),
+  (1, 'tr', 'name', 'Logitech M510 Kablosuz Bilgisayar Faresi'),
+  (1, 'tr', 'description', 'Bu ergonomik tasarımlı fare ile eliniz saatler sonra bile rahat kalır. Yumuşak kauçuk kulplu konturlu şekli, hafif kıvrımlı kenarları ve geniş avuç içi alanı, gün boyu zahmetsiz kontrol için ihtiyacınız olan desteği sağlar.');
 
 GRANT SELECT ON languages, items, item_transaltions TO guest;
