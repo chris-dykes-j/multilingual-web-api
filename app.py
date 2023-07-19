@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-import psycopg2, sys
+import psycopg2
 
 # instance of flask
 app = Flask(__name__)
@@ -34,26 +34,24 @@ def get_items():
     if language is None:
         language = 'en'
     cursor.execute(f'''
-        select * from items
-        join description_translations as dt on items.id = dt.item_id
-        where dt.language_code = \'{language}\'''')
+        select items.*, nt.translation, dt.translation from items
+        left join name_translations as nt on items.id = nt.item_id and nt.language_code = \'{language}\'
+        left join description_translations as dt on items.id = dt.item_id and dt.language_code = \'{language}\'
+        ''')
     result = cursor.fetchall()
     return jsonify(result)
 
 
 @app.route('/item-two')
 def get_items_two():
+
     cursor = conn.cursor()
     language = request.args.get('language')
-    print(language, file=sys.stdout)
     if language is None:
         language = 'en'
-    print(language, file=sys.stdout)
     cursor.execute(f'''
-        select items.*, nt.translation, dt.translation from items
-        left join name_translations as nt on items.id = nt.item_id and nt.language_code = \'{language}\'
-        left join description_translations as dt on items.id = dt.item_id and dt.language_code = \'{language}\'
-        ''')
-
+        select items.*, it.field, it.translation from items
+        left join item_translations as it on items.id = it.item_id 
+        where it.language_code = \'{language}\'''')
     result = cursor.fetchall()
     return jsonify(result)
