@@ -33,4 +33,4 @@ INSERT INTO item_translations (item_id, language_code, field, translation) VALUE
   (1, 'fr', 'name', 'Logitech M510 Souris d''ordinateur'),
   (1, 'fr', 'description', 'Votre main peut se détendre confortablement heure après heure avec cette souris ergonomique. Sa forme profilée avec des poignées en caoutchouc souple, des côtés légèrement incurvés et une large zone de paume vous offrent le soutien dont vous avez besoin pour un contrôle sans effort tout au long de la journée.');
 
-GRANT SELECT ON languages, items, item_transaltions TO guest;
+GRANT SELECT ON languages, items, item_translations TO guest;
