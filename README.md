@@ -1,8 +1,8 @@
 ### WIP
-- [ ] Connection string to DB
-- [ ] Database Table (Multilingual)
-- [ ] Routing for API endpoints
-- [ ] ORM mapping or w/e
+- [x] Connection string to DB
+- [ ] Finalize Item design plan
+- [ ] Add endpoint for Item Table and Multilingual data
+- [ ] Add language option in url: ?language=en or ?language=english
 
 ### pip packages
 - pip install flask
