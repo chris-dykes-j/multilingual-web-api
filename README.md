@@ -1,6 +1,6 @@
 ### WIP
 - [x] Connection string to DB
-- [ ] Finalize Item design plan
+- [x] Finalize Item design plan
 - [x] Add endpoint for Item Table and Multilingual data
 - [x] Add language option in url: ?language=en or ?language=english
 
