@@ -14,11 +14,6 @@ conn = psycopg2.connect(
 )
 
 
-@app.route('/')
-def index():
-    return 'Hi mom'
-
-
 @app.route('/language')
 def get_languages():
     cursor = conn.cursor()
@@ -41,17 +36,3 @@ def get_items():
     result = cursor.fetchall()
     return jsonify(result)
 
-
-@app.route('/item-two')
-def get_items_two():
-
-    cursor = conn.cursor()
-    language = request.args.get('language')
-    if language is None:
-        language = 'en'
-    cursor.execute(f'''
-        select items.*, it.field, it.translation from items
-        left join item_translations as it on items.id = it.item_id 
-        where it.language_code = \'{language}\'''')
-    result = cursor.fetchall()
-    return jsonify(result)
